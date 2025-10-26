@@ -1,0 +1,136 @@
+import {Button} from "@/shared/ui/Button/Button.jsx";
+import {Container} from "@/shared/ui/Container/Container.jsx";
+import {Input} from "@/shared/ui/Input/Input.jsx";
+import {Select} from "@/shared/ui/Select/Select.jsx";
+import {useState} from "react";
+
+
+
+const optionsTypeOfHouse = ["Квартира", "Дом", "Участок"];
+const optionsCountRooms = ["1", "2", "3", "4", "5"];
+
+
+
+export const Filter = ({setFilter}) => {
+
+    const [price,setPrice] = useState({
+        from: 0,
+        to: 0
+    })
+    const [square,setSquare] = useState({
+        from: 0,
+        to: 0
+    })
+    const [location,setLocation] = useState("")
+    const [typeOfHouse,setTypeOfHouse] = useState(optionsTypeOfHouse[0])
+    const [countRooms,setCountRooms] = useState(null)
+
+
+
+    const onChangePrice = (key,value) => {
+        setPrice(state => ({...state,[key]:value}))
+    }
+
+    const onChangeSquare = (key,value) => {
+        setSquare(state => ({...state,[key]:value}))
+    }
+
+
+
+    const onSubmit = () => {
+        const data = {
+            price,
+            square,
+            location,
+            typeOfHouse,
+            countRooms
+        }
+
+        setFilter(data)
+    }
+
+
+
+
+
+
+    return (
+        <div className={"mt-[41px]"}>
+            <Container>
+                <div className={"col-span-4 md-max:col-span-12 flex items-end gap-5"}>
+                    <Input
+                        setValue={(e) => onChangePrice("from",e)}
+                        value={price.from}
+                        full={true}
+                        title={"Стоимость(сум)"}
+                        placeholder={"От"}
+                        type={"number"}
+                        min={0}
+                    />
+                    <Input
+                        setValue={(e) => onChangePrice("to",e)}
+                        value={price.to}
+                        full={true}
+                        placeholder={"До"}
+                        type={"number"}
+                        min={0}
+                    />
+                </div>
+                <div className={"col-span-4 md-max:col-span-12 flex items-end gap-5"}>
+                    <Input
+                        setValue={(e) => onChangeSquare("from",e)}
+                        value={square.from}
+                        full={true}
+                        title={"Площадь(м2)"}
+                        placeholder={"От"}
+                        type={"number"}
+                        min={0}
+                    />
+                    <Input
+                        setValue={(e) => onChangeSquare("to",e)}
+                        value={square.to}
+                        full={true}
+                        placeholder={"До"}
+                        type={"number"}
+                        min={0}
+                    />
+                </div>
+                <div className={"col-span-4 md-max:col-span-12 flex items-end gap-5"}>
+                    <Input
+                        value={location}
+                        setValue={setLocation}
+                        full={true}
+                        title={"Местоположение"}
+                        placeholder={"Район, улица"}
+                    />
+                </div>
+
+                <Select
+                    value={typeOfHouse}
+                    setValue={setTypeOfHouse}
+                    classNameLabel={"col-span-4 md-max:col-span-12"}
+                    full={true}
+                    options={optionsTypeOfHouse}
+                />
+
+                <Select
+                    value={countRooms}
+                    setValue={setCountRooms}
+                    full={true}
+                    classNameLabel={"col-span-4 md-max:col-span-12"}
+                    placeholder={"Комнатность"}
+                    options={optionsCountRooms}
+                />
+
+                <Button
+                    onClick={onSubmit}
+                    className={"col-span-4 md-max:col-span-12 rounded-[10px] py-[24px]"}
+                >
+                    Показать
+                </Button>
+
+            </Container>
+        </div>
+    );
+};
+

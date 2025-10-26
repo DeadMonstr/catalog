@@ -1,0 +1,77 @@
+import {Button} from "@/shared/ui/Button/Button.jsx";
+import {Card} from "@/shared/ui/Card/Card.jsx";
+import {Container} from "@/shared/ui/Container/Container.jsx";
+import icon from "@/shared/assets/icons/fav.svg"
+
+
+export const CatalogList = ({data}) => {
+
+
+    const renderCards = () => {
+        return data.map((item) => {
+            return (
+                <Card
+                    className={"col-span-4 md-max:col-span-6"}
+                    key={item.id}
+                >
+                    <div className={"w-full h-[287px] relative"}>
+                        <img
+                            className={"w-full h-full object-cover"}
+                            src={item.image}
+                            alt="Image"
+                        />
+                        <img
+                            className={'absolute right-[15px] top-[15px]'}
+                            src={icon}
+                            alt="icon"
+                        />
+                    </div>
+
+                    <div className={"flex gap-2 mt-3"}>
+                        {item.mortgage && (
+                            <span
+                                className={"bg-(--color-success) text-center text-[12px] leading-[23px]  text-(--color-white)  rounded-[20px] px-[14px] py-[2px]"}
+                            >
+                                Возможна ипотека
+                            </span>
+                        )}
+                    </div>
+
+                    <h1 className={"mt-5 text-[28px] text-(--color-primary-text) font-medium"}>
+                        {item.price} {item.typeCurrency}
+                    </h1>
+
+                    <p className={"mt-[15px] flex gap-1 text-(--color-secondary-text) "}>
+                        <span className={"text-(--color-secondary-text)"}>{item.rooms} комн. кв</span>|
+                        <span className={"text-(--color-secondary-text)"}>{item.square} м2</span>|
+                        <span className={"text-(--color-secondary-text)"}>{item.floor} этаж</span>
+
+                    </p>
+
+                    <p className={"mt-[15px] text-(--color-primary-text)"}>
+                        {item.location}
+                    </p>
+
+                    <Button
+                        className={"mt-[47px] rounded-[5px]"}
+                        full
+                    >
+                        Подробнее
+                    </Button>
+
+
+                </Card>
+            )
+        })
+    }
+
+
+    return (
+        <div className={"mt-20 "}>
+            <Container>
+                {renderCards()}
+            </Container>
+        </div>
+    );
+};
+

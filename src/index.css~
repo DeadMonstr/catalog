@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+body {
+    font-family: var(--font-main);
+    letter-spacing: 0.02em;
+}
+
+
+
+@theme {
+    --font-main: "Poppins", sans-serif;
+}
+
+
+@theme {
+    --container-margin: 100px;
+    --container-gap: 20px;
+    --grid-cols: 12;
+    --container-max: 1440px;
+}
+
+@theme {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+/* add desktop-first variants (max-width). Define big → small */
+@custom-variant xl-max (@media (max-width: 1279px));
+@custom-variant lg-max (@media (max-width: 1023px));
+@custom-variant md-max (@media (max-width: 767px));
+@custom-variant sm-max (@media (max-width: 639px));
+
+
+@theme {
+    --color-primary: #012169;
+    --color-muted-background: #EDEDED;
+
+
+    --color-primary-text: #000000;
+    --color-secondary-text: #767676;
+    --color-muted-text: rgba(0,0,0,70);
+    --color-inverse-text: #0D1117;
+    --color-white: #ffffff;
+
+
+    --color-info: #79C0FF;
+    --color-success: rgba(29, 185, 84, 0.59);
+    --color-warning: #D29922;
+    --color-error: #F85149;
+}
+
+
+
+@layer utilities {
+    .link-header {
+        @apply text-(--color-white) font-medium ;
+    }
+
+
+    .link-icon {
+        @apply cursor-pointer border-1 border-(--color-white) rounded-full w-[50px] h-[50px] flex items-center justify-center hover:bg-(--color-secondary-text) hover:text-(--color-primary);
+    }
+
+}

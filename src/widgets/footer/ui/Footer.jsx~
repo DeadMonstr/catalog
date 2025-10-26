@@ -1,0 +1,72 @@
+import {Container} from "@/shared/ui/Container/Container.jsx";
+
+
+import logo from "@/shared/assets/logo/logo.png";
+
+import phone from "@/shared/assets/icons/ic_baseline-phone.png";
+import whatsapp from "@/shared/assets/icons/ri_whatsapp-line.png";
+import telegram from "@/shared/assets/icons/ic_baseline-telegram.png";
+
+export const Footer = () => {
+    return (
+        <footer className={"py-[52px] bg-(--color-primary) "}>
+            <Container>
+                <a href={""} className={"col-span-6 md-max:col-span-12 "}>
+                    <img className={"w-[150px] h-[170px] md-max:mx-auto"} src={logo} alt="Logo"/>
+                </a>
+                <div className={"col-span-6 md-max:col-span-12 flex flex-col gap-[30px] justify-center items-center"}>
+                    <nav>
+                        <ul className={"flex gap-10 items-center justify-start"}>
+                            <li className={"link-header"}>
+                                <a href="#">
+                                    О нас
+                                </a>
+                            </li>
+                            <li className={"link-header"}>
+                                <a href="#">
+                                    Каталог
+                                </a>
+                            </li>
+                            <li className={"link-header"}>
+                                <a href="#">
+                                    Продать
+                                </a>
+                            </li>
+                            <li className={"link-header"}>
+                                <a href="#">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className={"flex gap-[15px] md-max:items-center md-max:justify-center "}>
+                        <a href={"#"} className={"link-icon"}>
+                            <img src={phone} alt="Phone"/>
+                        </a>
+                        <a href={"#"} className={"link-icon"}>
+                            <img src={whatsapp} alt="whatsapp"/>
+                        </a>
+                        <a href={"#"} className={"link-icon"}>
+                            <img src={telegram} alt="telegram"/>
+                        </a>
+                    </div>
+                </div>
+
+                <hr className={"col-span-12 mt-[47px] border-white/50"}/>
+
+                <div className={"col-span-12 md-max:flex-col md-max:gap-[13px] flex items-center justify-center gap-[106px] mt-[47px]"}>
+                    <p className={"font-medium text-(--color-white)"}>
+                        221B Бейкер-стрит, Лондон
+                    </p>
+                    <a href="tel:+998901234567" className={"font-medium text-(--color-white)"}>
+                        + 998 90 123 4567
+                    </a>
+                    <a href="mailto:qwertyuiop@gmail.com" className={"font-medium text-(--color-white)"}>
+                        qwertyuiop@gmail.com
+                    </a>
+                </div>
+            </Container>
+        </footer>
+    );
+};
+
