@@ -14,7 +14,7 @@ export const Catalog = () => {
     const data = [
         {
             id: 1,
-            image: "https://i.pinimg.com/736x/f4/ac/08/f4ac087ed911cbf03d69fc678e7f237c.jpg",
+            image: "/images/img.png",
             mortgage: true,
             price: 50000,
             typeCurrency: "у.е.",
@@ -53,7 +53,7 @@ export const Catalog = () => {
         },
         {
             id: 4,
-            image: "/src/shared/assets/images/img.png",
+            image: "/images/img.png",
             mortgage: true,
             price: 400000,
             typeCurrency: "у.е.",
