@@ -9,14 +9,14 @@ import telegram from "@/shared/assets/icons/ic_baseline-telegram.png";
 
 export const Footer = () => {
     return (
-        <footer className={"py-[52px] bg-(--color-primary) "}>
+        <footer className={"py-[52px] bg-(--color-secondary) "}>
             <Container>
                 <a href={""} className={"col-span-6 md-max:col-span-12 "}>
                     <img className={"w-[150px] h-[170px] md-max:mx-auto"} src={logo} alt="Logo"/>
                 </a>
                 <div className={"col-span-6 md-max:col-span-12 flex flex-col gap-[30px] justify-end items-end md-max:justify-center  md-max:items-center"}>
                     <nav>
-                        <ul className={"flex gap-10 items-center justify-start"}>
+                        <ul className={"flex gap-10 sm-max:gap-7 items-center justify-start"}>
                             <li className={"link-header"}>
                                 <a href="#">
                                     О нас

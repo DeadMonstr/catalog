@@ -33,8 +33,8 @@ export const Pagination = React.memo(props => {
                 <li
                     key={index}
                     className={clsx(
-                        "flex items-center justify-center rounded-full cursor-pointer",
-                        pageNumber === currentPage && "w-10 h-10 bg-(--color-primary) text-white"
+                        "w-10 h-10 flex items-center justify-center rounded-full cursor-pointer",
+                        pageNumber === currentPage && " bg-(--color-primary) text-white"
                     )}
                     onClick={() => onPageChange(pageNumber)}
                 >

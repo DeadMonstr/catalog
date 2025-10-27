@@ -64,14 +64,64 @@ export const Catalog = () => {
             floor: "2/6",
             location: "Ташкент,Юнусабадский район, массив Юнусабад, 4-й квартал",
         },
-
-
+        {
+            id: 5,
+            image: "/images/img.png",
+            mortgage: true,
+            price: 400000,
+            typeCurrency: "у.е.",
+            typeOfHouse: "Квартира",
+            property: "вторичная",
+            rooms: 3,
+            square: 40,
+            floor: "2/6",
+            location: "Ташкент,Юнусабадский район, массив Юнусабад, 4-й квартал",
+        },
+        {
+            id: 6,
+            image: "/images/img.png",
+            mortgage: true,
+            price: 400000,
+            typeCurrency: "у.е.",
+            typeOfHouse: "Квартира",
+            property: "вторичная",
+            rooms: 3,
+            square: 40,
+            floor: "2/6",
+            location: "Ташкент,Юнусабадский район, массив Юнусабад, 4-й квартал",
+        },
+        {
+            id: 7,
+            image: "/images/img.png",
+            mortgage: true,
+            price: 400000,
+            typeCurrency: "у.е.",
+            typeOfHouse: "Квартира",
+            property: "вторичная",
+            rooms: 3,
+            square: 40,
+            floor: "2/6",
+            location: "Ташкент,Юнусабадский район, массив Юнусабад, 4-й квартал",
+        },
+        {
+            id: 8,
+            image: "/images/img.png",
+            mortgage: true,
+            price: 400000,
+            typeCurrency: "у.е.",
+            typeOfHouse: "Квартира",
+            property: "вторичная",
+            rooms: 3,
+            square: 40,
+            floor: "2/6",
+            location: "Ташкент,Юнусабадский район, массив Юнусабад, 4-й квартал",
+        },
     ]
     
     const [filter,setFilter] = useState({})
     const [subFilter,setSubFilter] = useState({})
     const [currentPage, setCurrentPage] = useState(1);
-    let PageSize = 3
+    let PageSize = 6
 
 
 
